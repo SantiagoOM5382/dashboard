@@ -14,5 +14,22 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
+
+Auth::routes();
+
+// auth routes dashboard
+Route::get('/dashboard', 'HomeController@index')->Middleware('auth');;
+Auth::routes(['reset' => false]);
+
+Auth::routes();
+
+
+// usuarios routes
+Route::resource('usuarios', 'UsuariosController')->Middleware('auth');;
+Route::get('/boliplayuser', [UsuariosController::class, 'index']);
+
+// guest routes
+Route::resource('guest', 'GuestController')->Middleware('auth');;
+Route::delete('/guests/{id}', 'GuestController@destroy')->name('guests.destroy');
