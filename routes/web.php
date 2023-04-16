@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return redirect('/dashboard');
 });
 
 Auth::routes();
@@ -33,3 +33,9 @@ Route::get('/boliplayuser', [UsuariosController::class, 'index']);
 // guest routes
 Route::resource('guest', 'GuestController')->Middleware('auth');;
 Route::delete('/guests/{id}', 'GuestController@destroy')->name('guests.destroy');
+
+
+
+// hdcashier routes
+Route::resource('hdcashier', 'HdcashierController')->Middleware('auth');;
+Route::delete('/hdcashiers/{id}', 'HdcashierController@destroy')->name('hdcashiers.destroy');

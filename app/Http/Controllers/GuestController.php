@@ -13,11 +13,10 @@ class GuestController extends Controller
 {
 
     // funcion para ver el index
-    public function index()
-{
-    $guests = DB::table('guests')->select('id', 'name', 'last_name', 'email', 'phone', 'city', 'theyre_new','created_at')->paginate(10);
-    return view('guest.index', compact('guests'));
-}
+    public function index(){
+        $guests = DB::table('guests')->select('id', 'name', 'last_name', 'email', 'phone', 'city', 'theyre_new','created_at')->paginate(10);
+        return view('guest.index', compact('guests'));
+    }
     
 
 

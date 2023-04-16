@@ -124,6 +124,16 @@
                                 </span>
                             </a>
                         </li>
+
+                        <li>
+                            <a href="{{ asset('/hdcashier') }}">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                                <span class="nav-text">
+                                    Cajeros Hondubet   
+                                </span>
+                            </a>
+                        </li>
+
                         <li>
                             <a href="{{ asset('/guest') }}">
                                 <i class="fa fa-user" aria-hidden="true"></i>
